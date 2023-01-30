@@ -19,44 +19,6 @@ import { darkTheme, lightTheme } from '../theme';
 import { Brightness4, Brightness7 } from '@material-ui/icons';
 const { name, projects } = data;
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  appBar: {
-    boxShadow: 'none',
-  },
-}));
-
-export async function getStaticProps() {
-  const baseURI = projects.baseURI;
-  const repos = projects.repositories;
-  const reqInit = {
-    headers: {
-      Authorization: `token ${process.env.PAT}`,
-    },
-  };
-  const fullRepoData = await Promise.allSettled(
-    repos.map(async name => {
-      const repo = await fetch(baseURI + name, reqInit).then(res => res.json());
-      const langs = await fetch(baseURI + name + '/languages', reqInit).then(
-        res => res.json(),
-      );
-      return {
-        ...repo,
-        languages: Object.getOwnPropertyNames(langs),
-      };
-    }),
-  );
-
-  return {
-    props: {
-      projects: fullRepoData,
-    },
-    revalidate: 60,
-  };
-}
-
 export default function Index({ projects, setTheme }) {
   const classes = useStyles();
 
@@ -93,4 +55,43 @@ export default function Index({ projects, setTheme }) {
       </Container>
     </div>
   );
+}
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  appBar: {
+    boxShadow: 'none',
+  },
+}));
+
+export async function getStaticProps() {
+  const baseURI = projects.baseURI;
+  const repos = projects.repositories;
+  const reqInit = {
+    headers: {
+      Authorization:
+        'token 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',
+    },
+  };
+  const fullRepoData = await Promise.allSettled(
+    repos.map(async name => {
+      const repo = await fetch(baseURI + name, reqInit).then(res => res.json());
+      const langs = await fetch(baseURI + name + '/languages', reqInit).then(
+        res => res.json(),
+      );
+      return {
+        ...repo,
+        languages: Object.getOwnPropertyNames(langs),
+      };
+    }),
+  );
+
+  return {
+    props: {
+      projects: fullRepoData,
+    },
+    revalidate: 60,
+  };
 }

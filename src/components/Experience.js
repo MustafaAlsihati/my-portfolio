@@ -115,7 +115,12 @@ export default function Experience() {
               component="p">
               {title}
             </Typography>
-            <Grid container item direction="row" spacing={1} justify="center">
+            <Grid
+              container
+              item
+              direction="column"
+              spacing={1}
+              justify="center">
               {experience[title].map(
                 (
                   {
@@ -132,7 +137,7 @@ export default function Experience() {
                   },
                   i,
                 ) => (
-                  <Grid item xs={12} sm key={i}>
+                  <Grid item sm key={i}>
                     <Fade
                       in={animate}
                       style={{ transitionDelay: `${200 * i}ms` }}>
@@ -145,20 +150,24 @@ export default function Experience() {
                           <CardHeader
                             avatar={
                               <Avatar variant="rounded">
-                                <Image
-                                  alt={`${organization} logo`}
-                                  src={thumbnail}
-                                  layout="fill"
-                                />
+                                {!!thumbnail && (
+                                  <Image
+                                    alt={`${organization} logo`}
+                                    src={thumbnail}
+                                    layout="fill"
+                                  />
+                                )}
                               </Avatar>
                             }
                             title={organization}
-                            subheader={role + ' - ' + type}
+                            subheader={role + (type ? ' - ' + type : '')}
                           />
                           <CardHeader
                             avatar={<DateRange />}
                             title={getHumanDiff(startDate, endDate)}
-                            subheader={`${startDate} - ${endDate}`}
+                            subheader={`${startDate} - ${
+                              endDate !== undefined ? endDate : 'Present'
+                            }`}
                             className={classes.cardHeader}
                           />
                           <CardHeader

@@ -89,11 +89,11 @@ export default function About() {
         spacing={2}
         justify="center"
         alignItems="center">
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Avatar variant="rounded" className={classes.dp}>
             <Image alt="Display Picture" src={about.picture} layout="fill" />
           </Avatar>
-        </Grid>
+        </Grid> */}
         <Grid container item xs={12} spacing={2} justify="center">
           {socialDetails.map(({ alt, icon, link }, i) => (
             <Grid item key={i}>
