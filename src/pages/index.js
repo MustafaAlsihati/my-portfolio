@@ -21,9 +21,7 @@ const { name, projects } = data;
 
 export default function Index({ projects, setTheme }) {
   const classes = useStyles();
-
   const trigger = useScrollTrigger({ disableHysteresis: true });
-
   const theme = useTheme();
 
   const toggleTheme = useCallback(() => {

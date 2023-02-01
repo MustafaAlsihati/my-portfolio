@@ -16,19 +16,6 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import useAnimate from '../hooks/useAnimate';
 
-const useStyles = makeStyles(theme => ({
-  cont: {
-    minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
-  },
-  card: {
-    height: '100%',
-  },
-  cardActionArea: {
-    height: '100%',
-    // display: 'grid'
-  },
-}));
-
 export default function Projects({ data }) {
   const classes = useStyles();
 
@@ -121,3 +108,15 @@ export default function Projects({ data }) {
     </Grid>
   );
 }
+
+const useStyles = makeStyles(theme => ({
+  cont: {
+    minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+  },
+  card: {
+    height: '100%',
+  },
+  cardActionArea: {
+    height: '100%',
+  },
+}));

@@ -45,28 +45,6 @@ const professionalDetails = landing.professionalDetails.map(
   },
 );
 
-let iobj = {};
-professionalDetails.forEach(({ alt, backgroundColor }) => {
-  iobj[alt] = { backgroundColor };
-});
-
-const useStyles = makeStyles(theme => ({
-  cont: {
-    minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
-    paddingBottom: theme.spacing(10),
-  },
-  subtitle: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(5),
-  },
-  avatar: {
-    height: theme.spacing(8),
-    width: theme.spacing(8),
-    padding: theme.spacing(2),
-  },
-  ...iobj,
-}));
-
 export default function Landing() {
   const classes = useStyles();
   const theme = useTheme();
@@ -125,3 +103,26 @@ export default function Landing() {
     </Grid>
   );
 }
+
+const useStyles = makeStyles(theme => {
+  let iobj = {};
+  professionalDetails.forEach(({ alt, backgroundColor }) => {
+    iobj[alt] = { backgroundColor };
+  });
+  return {
+    cont: {
+      minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+      paddingBottom: theme.spacing(10),
+    },
+    subtitle: {
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(5),
+    },
+    avatar: {
+      height: theme.spacing(8),
+      width: theme.spacing(8),
+      padding: theme.spacing(2),
+    },
+    ...iobj,
+  };
+});

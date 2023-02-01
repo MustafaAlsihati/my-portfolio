@@ -20,8 +20,8 @@ import useAnimate from '../hooks/useAnimate';
 import { iconify } from '../js/utils';
 const { skills } = data;
 
-const wrapper = (sk = []) =>
-  sk.map(v => {
+function wrapper(sk = []) {
+  return sk.map(v => {
     const ic = simpleIcons.get(
       typeof v === 'string' ? iconify(v) : iconify(v.icon),
     ) || {
@@ -46,33 +46,12 @@ const wrapper = (sk = []) =>
       ),
     };
   });
+}
 
 let wrappedSkills = {};
 Object.getOwnPropertyNames(skills).forEach(type => {
   wrappedSkills[type] = wrapper(skills[type]);
 });
-
-let iobj = {};
-Object.values(wrappedSkills).forEach(oarr => {
-  oarr.forEach(({ backgroundColor, alt }) => {
-    iobj[alt] = { backgroundColor };
-  });
-});
-
-const useStyles = makeStyles(theme => ({
-  cont: {
-    minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
-  },
-  skobj: {
-    marginBottom: theme.spacing(4),
-  },
-  avatar: {
-    height: theme.spacing(7),
-    width: theme.spacing(7),
-    padding: theme.spacing(1.5),
-  },
-  ...iobj,
-}));
 
 export default function Skills() {
   const classes = useStyles();
@@ -143,3 +122,26 @@ export default function Skills() {
     </Grid>
   );
 }
+
+const useStyles = makeStyles(theme => {
+  let iobj = {};
+  Object.values(wrappedSkills).forEach(oarr => {
+    oarr.forEach(({ backgroundColor, alt }) => {
+      iobj[alt] = { backgroundColor };
+    });
+  });
+  return {
+    cont: {
+      minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+    },
+    skobj: {
+      marginBottom: theme.spacing(4),
+    },
+    avatar: {
+      height: theme.spacing(7),
+      width: theme.spacing(7),
+      padding: theme.spacing(1.5),
+    },
+    ...iobj,
+  };
+});

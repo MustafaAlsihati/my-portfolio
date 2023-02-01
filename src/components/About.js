@@ -8,12 +8,10 @@ import {
 import data from '../constants/data.json';
 import simpleIcons from 'simple-icons';
 import clsx from 'clsx';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { iconify } from '../js/utils';
 import Cancel from '@material-ui/icons/Cancel';
 const { about } = data;
-
-const dpx = about.social.length * 10 - 2;
 
 const socialDetails = about.social.map(({ alt, icon, link }) => {
   const ic = simpleIcons.get(iconify(icon)) || {
@@ -38,29 +36,6 @@ const socialDetails = about.social.map(({ alt, icon, link }) => {
     link,
   };
 });
-
-let iobj = {};
-socialDetails.forEach(({ alt, backgroundColor }) => {
-  iobj[alt] = { backgroundColor };
-});
-
-const useStyles = makeStyles(theme => ({
-  cont: {
-    minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
-    alignSelf: 'center',
-    justifySelf: 'center',
-  },
-  avatar: {
-    height: theme.spacing(8),
-    width: theme.spacing(8),
-    padding: theme.spacing(2),
-  },
-  dp: {
-    height: theme.spacing(Math.max(dpx, 28)),
-    width: theme.spacing(Math.max(dpx, 28)),
-  },
-  ...iobj,
-}));
 
 export default function About() {
   const classes = useStyles();
@@ -113,3 +88,30 @@ export default function About() {
     </Grid>
   );
 }
+
+const useStyles = makeStyles(theme => {
+  const dpx = about.social.length * 10 - 2;
+
+  let iobj = {};
+  socialDetails.forEach(({ alt, backgroundColor }) => {
+    iobj[alt] = { backgroundColor };
+  });
+
+  return {
+    cont: {
+      minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+      alignSelf: 'center',
+      justifySelf: 'center',
+    },
+    avatar: {
+      height: theme.spacing(8),
+      width: theme.spacing(8),
+      padding: theme.spacing(2),
+    },
+    dp: {
+      height: theme.spacing(Math.max(dpx, 28)),
+      width: theme.spacing(Math.max(dpx, 28)),
+    },
+    ...iobj,
+  };
+});
