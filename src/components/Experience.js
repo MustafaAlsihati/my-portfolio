@@ -101,7 +101,7 @@ export default function Experience() {
       <Grid
         container
         item
-        xs={12}
+        xs={10}
         lg={6}
         direction="column"
         spacing={1}
