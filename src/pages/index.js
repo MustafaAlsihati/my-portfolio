@@ -46,10 +46,10 @@ export default function Index({ projects, setTheme }) {
       <Toolbar className={classes.toolbar} />
       <Container>
         <Landing />
-        <Skills />
-        <Projects data={projects} />
-        <Experience />
         <About />
+        <Skills />
+        <Experience />
+        <Projects data={projects} />
       </Container>
     </div>
   );

@@ -90,11 +90,11 @@
   "projects": {
     "baseURI": "https://api.github.com/repos/MustafaAlsihati/",
     "repositories": [
-      "shoplist",
+      "Shop-List",
       "Coffee-Crew",
-      "Car-Pooling-Website",
+      "Car-Pooling-Android",
       "Car-Pooling-Admin",
-      "Car-Pooling-Android"
+      "Car-Pooling-Website"
     ]
   },
   "experience": {
@@ -105,7 +105,8 @@
         "startDate": "2023-01-28",
         "city": "Ad Dammam",
         "state": "Eastern Province",
-        "country": "Saudi Arabia"
+        "country": "Saudi Arabia",
+        "description": "Co-Founded and Chief Technology Officer.\nBack-end development using Node.js and Express REST API, MongoDB, Realm, and Railway."
       },
       {
         "organization": "taketkt",
@@ -115,7 +116,8 @@
         "state": "Eastern Province",
         "country": "Saudi Arabia",
         "url": "https://taketkt.com/",
-        "thumbnail": "https://firebasestorage.googleapis.com/v0/b/waiting-55117.appspot.com/o/general%2Ftaketkt-logov1-1.jpg?alt=media&token=463fa446-6c75-423e-8f23-0924256ad73d"
+        "thumbnail": "https://firebasestorage.googleapis.com/v0/b/waiting-55117.appspot.com/o/general%2Ftaketkt-logov1-1.jpg?alt=media&token=463fa446-6c75-423e-8f23-0924256ad73d",
+        "description": "Co-Founded and technical team leader Chief Technology Officer.\nFull stack development using React, Next.js, Redux, Firebase, Node.js and Express REST API."
       },
       {
         "organization": "CloudApps LLC",
@@ -126,7 +128,8 @@
         "state": "Eastern Province",
         "country": "Saudi Arabia",
         "url": "https://lazywait.com/",
-        "thumbnail": "https://i0.wp.com/lazywait.com/wp-content/uploads/2022/12/LW-APP.webp?w=300&ssl=1"
+        "thumbnail": "https://i0.wp.com/lazywait.com/wp-content/uploads/2022/12/LW-APP.webp?w=300&ssl=1",
+        "description": "Managed to lead team to achieve sprints goals and enhance team performance.\nImplemented agile methodologies and ceremonies in software engineering team."
       },
       {
         "organization": "CloudApps LLC",
@@ -136,7 +139,8 @@
         "state": "Eastern Province",
         "country": "Saudi Arabia",
         "url": "https://lazywait.com/",
-        "thumbnail": "https://i0.wp.com/lazywait.com/wp-content/uploads/2022/12/LW-APP.webp?w=300&ssl=1"
+        "thumbnail": "https://i0.wp.com/lazywait.com/wp-content/uploads/2022/12/LW-APP.webp?w=300&ssl=1",
+        "description": "Designed and developed LazyWait front-end and back-end applications using React, React Native, Redux, Angular.js, Firebase, Node.js using Express REST API.\nDeveloped React Native modules using Java, Swift, C# and C++.\nIntegration with POS providers and third-party platforms."
       }
     ]
   },

@@ -99,7 +99,7 @@ const useStyles = makeStyles(theme => {
 
   return {
     cont: {
-      minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+      minHeight: `calc(75vh - ${theme.spacing(4)}px)`,
       alignSelf: 'center',
       justifySelf: 'center',
     },

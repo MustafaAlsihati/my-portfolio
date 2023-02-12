@@ -12,7 +12,7 @@ import {
   useTheme,
 } from '@material-ui/core';
 import Image from 'next/image';
-import { DateRange, LocationCity } from '@material-ui/icons';
+import { DateRange, LocationCity, Code } from '@material-ui/icons';
 import data from '../constants/data.json';
 import { useRef } from 'react';
 import useAnimate from '../hooks/useAnimate';
@@ -90,6 +90,7 @@ export default function Experience() {
                     country,
                     url,
                     thumbnail,
+                    description,
                   },
                   i,
                 ) => (
@@ -131,6 +132,13 @@ export default function Experience() {
                             subheader={`${city}, ${state}, ${country}`}
                             className={classes.cardHeader}
                           />
+                          {!!description && (
+                            <CardHeader
+                              avatar={<Code />}
+                              subheader={`${description}`}
+                              className={classes.cardHeader}
+                            />
+                          )}
                         </CardActionArea>
                       </Card>
                     </Fade>
