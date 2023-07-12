@@ -11,6 +11,7 @@ module.exports = withPWA({
       'www.nonceblox.com',
       'i0.wp.com',
       'firebasestorage.googleapis.com',
+      'i.ibb.co',
     ],
   },
 });
