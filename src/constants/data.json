@@ -94,11 +94,12 @@
   "projects": {
     "baseURI": "https://api.github.com/repos/MustafaAlsihati/",
     "repositories": [
+      "infranchise-api",
+      "shace-canvas-drawer",
       "Shop-List",
-      "Coffee-Crew",
       "Car-Pooling-Android",
-      "Car-Pooling-Admin",
-      "Car-Pooling-Website"
+      "bitcoinpricetracker",
+      "Coffee-Crew"
     ]
   },
   "experience": {
