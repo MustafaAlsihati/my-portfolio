@@ -1,6 +1,7 @@
+import { ThemeProvider } from '@/app/theme-provider';
 import type { Metadata } from 'next';
 import data from '../constants/data.json';
-import { ThemeProvider } from '@/app/theme-provider';
+import './globals.css';
 
 const { name } = data;
 
