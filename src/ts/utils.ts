@@ -28,7 +28,7 @@ export function iconify(input = '') {
   return output;
 }
 
-export function getHumanDiff(startDate, endDate) {
+export function getHumanDiff(startDate: Date | string, endDate: Date | string) {
   let str = '';
   const start = new Date(startDate);
   const end = !!endDate ? new Date(endDate) : new Date();

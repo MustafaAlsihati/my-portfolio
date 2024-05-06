@@ -9,36 +9,40 @@ import data from '../constants/data.json';
 import simpleIcons from 'simple-icons';
 import clsx from 'clsx';
 // import Image from 'next/image';
-import { iconify } from '../js/utils';
-import Cancel from '@material-ui/icons/Cancel';
+import { iconify } from '@/ts/utils';
+import CancelIcon from '@material-ui/icons/Cancel';
+
 const { about } = data;
 
 const socialDetails = about.social.map(({ alt, icon, link }) => {
   const ic = simpleIcons.get(iconify(icon)) || {
     hex: '424242',
-    component: <Cancel color="white" fontSize={36} />,
+    component: <CancelIcon color={'white' as any} fontSize={36 as any} />,
   };
   return {
     alt,
     backgroundColor: '#' + ic.hex,
-    icon: ic.component || (
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        height="100%"
-        width="100%"
-        xmlnsXlink="http://www.w3.org/1999/xlink">
-        <title>{icon}</title>
-        <path d={ic.path} fill="white" />
-      </svg>
-    ),
+    icon:
+      'component' in ic && ic.component ? (
+        ic.component
+      ) : (
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          height="100%"
+          width="100%"
+          xmlnsXlink="http://www.w3.org/1999/xlink">
+          <title>{icon}</title>
+          <path d={ic.path} fill="white" />
+        </svg>
+      ),
     link,
   };
 });
 
-export default function About() {
-  const classes = useStyles();
+export const About = () => {
+  const classes: any = useStyles();
 
   return (
     <Grid
@@ -70,7 +74,7 @@ export default function About() {
           </Avatar>
         </Grid> */}
         <Grid container item xs={12} spacing={2} justify="center">
-          {socialDetails.map(({ alt, icon, link }, i) => (
+          {socialDetails.map(({ alt, icon, link }: any, i) => (
             <Grid item key={i}>
               <a href={link} target="_blank" rel="noopener noreferrer">
                 <Tooltip title={alt} placement="top">
@@ -87,12 +91,12 @@ export default function About() {
       </Grid>
     </Grid>
   );
-}
+};
 
 const useStyles = makeStyles(theme => {
   const dpx = about.social.length * 10 - 2;
 
-  let iobj = {};
+  let iobj: any = {};
   socialDetails.forEach(({ alt, backgroundColor }) => {
     iobj[alt] = { backgroundColor };
   });

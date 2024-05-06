@@ -1,3 +1,4 @@
+import { getHumanDiff } from '@/ts/utils';
 import {
   Avatar,
   Card,
@@ -11,15 +12,15 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
+import { Code, DateRange, LocationCity } from '@material-ui/icons';
 import Image from 'next/image';
-import { DateRange, LocationCity, Code } from '@material-ui/icons';
-import data from '../constants/data.json';
 import { useRef } from 'react';
+import data from '../constants/data.json';
 import useAnimate from '../hooks/useAnimate';
-import { getHumanDiff } from '../js/utils';
+
 const { experience } = data;
 
-export default function Experience() {
+export const Experience = () => {
   const classes = useStyles();
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
@@ -41,14 +42,15 @@ export default function Experience() {
         <Typography variant="h2" gutterBottom align="center">
           Experience
         </Typography>
+        {/* @ts-ignore */}
         <Hidden mdDown>
           <Fade in={animate} style={{ transitionDelay: '250ms' }}>
             <div>
               <Image
                 alt="Experience"
                 src="/experience.svg"
-                width="996.46"
-                height="828.18"
+                width={996.46}
+                height={828.18}
               />
             </div>
           </Fade>
@@ -152,7 +154,7 @@ export default function Experience() {
       <div ref={animRef}></div>
     </Grid>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   cont: {

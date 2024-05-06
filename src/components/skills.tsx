@@ -1,3 +1,4 @@
+import { iconify } from '@/ts/utils';
 import {
   Avatar,
   Fade,
@@ -17,11 +18,11 @@ import { useRef } from 'react';
 import simpleIcons from 'simple-icons';
 import data from '../constants/data.json';
 import useAnimate from '../hooks/useAnimate';
-import { iconify } from '../js/utils';
+
 const { skills } = data;
 
-function wrapper(sk = []) {
-  return sk.map(v => {
+const wrapper = (sk = []) => {
+  return sk.map((v: any) => {
     const ic = simpleIcons.get(
       typeof v === 'string' ? iconify(v) : iconify(v.icon),
     ) || {
@@ -32,29 +33,32 @@ function wrapper(sk = []) {
     return {
       alt: v.alt || v || ic.title,
       backgroundColor: v.backgroundColor || '#' + ic.hex,
-      icon: ic.component || (
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          height="100%"
-          width="100%"
-          xmlnsXlink="http://www.w3.org/1999/xlink">
-          <title>{ic.title}</title>
-          <path d={ic.path} fill="white" />
-        </svg>
-      ),
+      icon:
+        'component' in ic && ic.component ? (
+          ic.component
+        ) : (
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            xmlnsXlink="http://www.w3.org/1999/xlink">
+            <title>{ic.title}</title>
+            <path d={ic.path} fill="white" />
+          </svg>
+        ),
     };
   });
-}
+};
 
 let wrappedSkills = {};
 Object.getOwnPropertyNames(skills).forEach(type => {
   wrappedSkills[type] = wrapper(skills[type]);
 });
 
-export default function Skills() {
-  const classes = useStyles();
+export const Skills = () => {
+  const classes: any = useStyles();
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   const align = mdDown ? 'center' : 'flex-end';
@@ -74,10 +78,11 @@ export default function Skills() {
         <Typography variant="h2" gutterBottom align="center">
           Skills
         </Typography>
+        {/* @ts-ignore */}
         <Hidden mdDown>
           <Fade in={animate} style={{ transitionDelay: '100ms' }}>
             <div>
-              <Image alt="Skills" src="/skill.svg" width="1139" height="655" />
+              <Image alt="Skills" src="/skill.svg" width={1139} height={655} />
             </div>
           </Fade>
         </Hidden>
@@ -121,11 +126,11 @@ export default function Skills() {
       </Grid>
     </Grid>
   );
-}
+};
 
 const useStyles = makeStyles(theme => {
-  let iobj = {};
-  Object.values(wrappedSkills).forEach(oarr => {
+  let iobj: any = {};
+  Object.values(wrappedSkills).forEach((oarr: any) => {
     oarr.forEach(({ backgroundColor, alt }) => {
       iobj[alt] = { backgroundColor };
     });

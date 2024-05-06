@@ -1,3 +1,4 @@
+import { iconify } from '@/ts/utils';
 import {
   Avatar,
   Fade,
@@ -10,42 +11,45 @@ import {
   useTheme,
   Zoom,
 } from '@material-ui/core';
-import ReactTyped from 'react-typed';
+import Cancel from '@material-ui/icons/Cancel';
 import clsx from 'clsx';
 import Image from 'next/image';
+import ReactTyped from 'react-typed';
 import simpleIcons from 'simple-icons';
 import data from '../constants/data.json';
-import { iconify } from '../js/utils';
-import Cancel from '@material-ui/icons/Cancel';
+
 const { landing } = data;
 
 const professionalDetails = landing.professionalDetails.map(
   ({ alt, icon, link }) => {
     const ic = simpleIcons.get(iconify(icon)) || {
       hex: '424242',
-      component: <Cancel color="white" fontSize={36} />,
+      component: <Cancel color={'white' as any} fontSize={36 as any} />,
     };
     return {
       alt,
       backgroundColor: '#' + ic.hex,
-      icon: ic.component || (
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          height="100%"
-          width="100%"
-          xmlnsXlink="http://www.w3.org/1999/xlink">
-          <title>{icon}</title>
-          <path d={ic.path} fill="white" />
-        </svg>
-      ),
+      icon:
+        'component' in ic && ic.component ? (
+          ic.component
+        ) : (
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            xmlnsXlink="http://www.w3.org/1999/xlink">
+            <title>{icon}</title>
+            <path d={ic.path} fill="white" />
+          </svg>
+        ),
       link,
     };
   },
 );
 
-export default function Landing() {
+export const Landing = () => {
   const classes = useStyles();
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('sm'));
@@ -70,7 +74,7 @@ export default function Landing() {
           />
         </Typography>
         <Grid container direction="row" spacing={2}>
-          {professionalDetails.map(({ alt, icon, link }, i) => (
+          {professionalDetails.map(({ alt, icon, link }: any, i) => (
             <Grid item key={i}>
               <a href={link} target="_blank" rel="noopener noreferrer">
                 <Zoom in={true} style={{ transitionDelay: `${100 * i}ms` }}>
@@ -88,21 +92,22 @@ export default function Landing() {
         </Grid>
       </Grid>
 
+      {/* @ts-ignore */}
       <Hidden mdDown>
         <Fade in={true} style={{ transitionDelay: '100ms' }}>
           <Grid item lg={6}>
             <Image
               src="/landing.svg"
               alt="Landing"
-              width="900.94"
-              height="787"
+              width={900.94}
+              height={787}
             />
           </Grid>
         </Fade>
       </Hidden>
     </Grid>
   );
-}
+};
 
 const useStyles = makeStyles(theme => {
   let iobj = {};

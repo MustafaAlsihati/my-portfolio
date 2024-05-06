@@ -16,7 +16,11 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import useAnimate from '../hooks/useAnimate';
 
-export default function Projects({ data }) {
+interface Props {
+  data: any[];
+}
+
+export const Projects = ({ data }: Props) => {
   const classes = useStyles();
 
   const animRef = useRef(null);
@@ -34,14 +38,15 @@ export default function Projects({ data }) {
         <Typography variant="h2" gutterBottom align="center" innerRef={animRef}>
           Projects
         </Typography>
+        {/* @ts-ignore */}
         <Hidden mdDown>
           <Fade in={animate} style={{ transitionDelay: '250ms' }}>
             <div>
               <Image
                 alt="Projects"
                 src="/projects.svg"
-                width="1144"
-                height="617.32"
+                width={1144}
+                height={617.32}
               />
             </div>
           </Fade>
@@ -107,7 +112,7 @@ export default function Projects({ data }) {
       </Grid>
     </Grid>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   cont: {
