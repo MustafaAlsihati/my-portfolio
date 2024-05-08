@@ -1,5 +1,5 @@
-import { MetadataRoute } from 'next';
 import data from '@/constants/data.json';
+import { MetadataRoute } from 'next';
 
 const { name } = data;
 
