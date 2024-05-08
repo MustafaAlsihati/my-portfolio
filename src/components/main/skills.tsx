@@ -88,9 +88,13 @@ const wrapper = (
       iconify(typeof v === 'string' ? v : v.icon),
     );
     return {
-      alt: iconFromSimpleIcons.title ?? '',
-      backgroundColor: '#' + iconFromSimpleIcons.hex,
-      icon: iconFromSimpleIcons.path ? (
+      alt:
+        (v as any).alt ??
+        iconFromSimpleIcons?.title ??
+        (typeof v === 'string' ? v : v.icon) ??
+        '',
+      backgroundColor: '#' + (iconFromSimpleIcons?.hex ?? '000000'),
+      icon: iconFromSimpleIcons?.path ? (
         <svg
           role="img"
           viewBox="0 0 24 24"

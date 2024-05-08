@@ -76,45 +76,45 @@ export const Experience = () => {
                             />
                           )}
                           <div>
-                            <p className="text-text dark:text-textDark font-medium">
+                            <p className="text-text dark:text-textDark text-md font-medium">
                               {organization}
                             </p>
-                            <p className="text-zinc-600 dark:text-zinc-400">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                               {role + (type ? ' - ' + type : '')}
                             </p>
                           </div>
                         </div>
-                        <div className="flex flex-row gap-8">
+                        <div className="flex flex-row gap-8 mx-2">
                           <div className="w-3 h-3">
                             <Calendar className="text-text dark:text-textDark" />
                           </div>
                           <div>
-                            <p className="text-text dark:text-textDark">
+                            <p className="text-text dark:text-textDark text-sm">
                               {getHumanDiff(startDate, endDate)}
                             </p>
-                            <p className="text-zinc-600 dark:text-zinc-400">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                               {`${startDate} - ${
                                 endDate !== undefined ? endDate : 'Present'
                               }`}
                             </p>
                           </div>
                         </div>
-                        <div className="flex flex-row gap-8">
+                        <div className="flex flex-row gap-8 mx-2">
                           <div className="w-3 h-3">
                             <MapPin className="text-text dark:text-textDark" />
                           </div>
                           <div>
-                            <p className="text-zinc-600 dark:text-zinc-400">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                               {`${city}, ${state}, ${country}`}
                             </p>
                           </div>
                         </div>
-                        <div className="flex flex-row gap-8">
+                        <div className="flex flex-row gap-8 mx-2">
                           <div className="w-3 h-3">
                             <Code className="text-text dark:text-textDark" />
                           </div>
                           <div>
-                            <p className="text-zinc-600 dark:text-zinc-400">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                               {`${description}`}
                             </p>
                           </div>
