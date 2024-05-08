@@ -32,7 +32,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="theme-color" content="black" />
       </head>
       <body>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
