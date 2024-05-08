@@ -29,6 +29,16 @@ module.exports = {
         hostname: 'i.ibb.co',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'caterit.app',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+        port: '',
+      },
     ],
   },
 };

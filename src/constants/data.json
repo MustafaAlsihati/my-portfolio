@@ -95,19 +95,52 @@
     "baseURI": "https://api.github.com/repos/MustafaAlsihati/",
     "repositories": [
       "infranchise-api",
-      "shace-canvas-drawer",
+      "realtime-sql-react-hook",
       "Shop-List",
       "Car-Pooling-Android",
-      "bitcoinpricetracker",
-      "Coffee-Crew"
+      "bitcoinpricetracker"
     ]
   },
   "experience": {
     "Work Experience": [
       {
+        "organization": "taketkt",
+        "role": "Founder | CTO | Software Engineer",
+        "startDate": "2021-10-01",
+        "city": "Ad Dammam",
+        "state": "Eastern Province",
+        "country": "Saudi Arabia",
+        "url": "https://taketkt.com",
+        "thumbnail": "https://firebasestorage.googleapis.com/v0/b/waiting-55117.appspot.com/o/general%2Flogo512.png?alt=media&token=d57f3b20-ae7f-4bd5-a920-df465421fb33",
+        "description": "Co-founder and technical team leader (CTO).\nFull stack development using Next.js, React Native, PostgreSQL, Firebase, Node.js."
+      },
+      {
+        "organization": "Caterit",
+        "role": "Software Engineer",
+        "startDate": "2023-09-10",
+        "city": "Riyadh (Remote)",
+        "state": "Eastern Province",
+        "country": "Saudi Arabia",
+        "url": "https://caterit.app/",
+        "thumbnail": "https://caterit.app/_next/image?url=%2Fcaterit-logo-color.png&w=256&q=75",
+        "description": "Full stack development using Next.js, React Native, MSSQL, Node.js, and ASP.NET Core."
+      },
+      {
+        "organization": "Jaicome",
+        "role": "Co-founder | Software Engineer",
+        "startDate": "2022-11-01",
+        "city": "Ad Dammam",
+        "state": "Eastern Province",
+        "country": "Saudi Arabia",
+        "url": "https://www.jaicome.com",
+        "thumbnail": "https://images.squarespace-cdn.com/content/v1/657ffa741843535d6d821108/e5ddcfe8-7363-4833-a300-64222cb82a50/%D9%85%D9%86%D9%8A%D9%88+%D8%A7%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A+-+%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+%D8%AC%D8%A7%D9%8A%D9%83%D9%8F%D9%85+-+%D8%AC%D8%A7%D9%8A%D9%83%D9%85?format=300w",
+        "description": "Co-founder and Software Engineer.\nFull stack development using Next.js, React Native, Firebase, Node.js."
+      },
+      {
         "organization": "6 Degrees",
         "role": "Full-stack Developer",
         "startDate": "2023-04-26",
+        "endDate": "2023-08-20",
         "city": "Al Khobar",
         "state": "Eastern Province",
         "country": "Saudi Arabia",
@@ -116,21 +149,11 @@
         "description": "Full-stack Developer working on PHP Laravel, Vue.js, Nuxt.js, Next.js, and Node.js."
       },
       {
-        "organization": "taketkt",
-        "role": "Co-Founder",
-        "startDate": "2021-10-01",
-        "city": "Ad Dammam",
-        "state": "Eastern Province",
-        "country": "Saudi Arabia",
-        "url": "https://taketkt.com",
-        "thumbnail": "https://firebasestorage.googleapis.com/v0/b/waiting-55117.appspot.com/o/general%2Ftaketkt-logov1-1.jpg?alt=media&token=463fa446-6c75-423e-8f23-0924256ad73d",
-        "description": "Co-Founded and technical team leader Chief Technology Officer.\nFull stack development using React, Next.js, Redux, Firebase, Node.js and Express REST API."
-      },
-      {
         "organization": "CloudApps LLC",
         "role": "Software Engineer",
         "type": "Full-stack Development",
         "startDate": "2020-07-06",
+        "endDate": "2023-02-20",
         "city": "Ad Dammam",
         "state": "Eastern Province",
         "country": "Saudi Arabia",
@@ -142,6 +165,7 @@
         "organization": "CloudApps LLC",
         "role": "Acting Chief Technology Officer",
         "startDate": "2021-10-01",
+        "endDate": "2023-02-20",
         "city": "Ad Dammam",
         "state": "Eastern Province",
         "country": "Saudi Arabia",
@@ -153,7 +177,7 @@
   },
   "about": {
     "description": "I am a full-stack Software Engineer, with a bachelor's degree in Computer Science from Imam Abdulrahman Bin Faisal University, Saudi Arabia. I strive to make meaningful applications with the best UI/UX practices and an optimized for scale and performance applications.",
-    "picture": "/profile.JPG",
+    "picture": "/mustafa_alsihati.jpeg",
     "social": []
   },
   "theme": {

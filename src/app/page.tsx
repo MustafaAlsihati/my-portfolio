@@ -1,4 +1,9 @@
-import MainPage from '@/components';
+import { About } from '@/components/main/about';
+import { Experience } from '@/components/main/experience';
+import { Landing } from '@/components/main/landing';
+import { Projects } from '@/components/main/projects';
+import { Skills } from '@/components/main/skills';
+import { AppBar } from '@/components/ui/app-bar';
 import data from '@/constants/data.json';
 
 export default async function IndexPage() {
@@ -23,5 +28,16 @@ export default async function IndexPage() {
     }),
   );
 
-  return <MainPage projects={allProjects} />;
+  return (
+    <div className="flex-grow bg-background dark:bg-backgroundDark">
+      <AppBar />
+      <div className="mx-auto container bg-background dark:bg-backgroundDark">
+        <Landing />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects projects={allProjects} />
+      </div>
+    </div>
+  );
 }
