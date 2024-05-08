@@ -72,11 +72,13 @@ export const Experience = () => {
                               src={thumbnail}
                               width={40}
                               height={40}
-                              className="rounded-lg"
+                              className="rounded-lg w-[40px] h-[40px]"
                             />
                           )}
                           <div>
-                            <p>{organization}</p>
+                            <p className="text-text dark:text-textDark font-medium">
+                              {organization}
+                            </p>
                             <p className="text-zinc-600 dark:text-zinc-400">
                               {role + (type ? ' - ' + type : '')}
                             </p>
@@ -87,7 +89,9 @@ export const Experience = () => {
                             <Calendar className="text-text dark:text-textDark" />
                           </div>
                           <div>
-                            <p>{getHumanDiff(startDate, endDate)}</p>
+                            <p className="text-text dark:text-textDark">
+                              {getHumanDiff(startDate, endDate)}
+                            </p>
                             <p className="text-zinc-600 dark:text-zinc-400">
                               {`${startDate} - ${
                                 endDate !== undefined ? endDate : 'Present'

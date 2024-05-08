@@ -1,4 +1,3 @@
-import { ThemeProvider as MuiThemeProvider } from '@/app/theme-provider';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import data from '../constants/data.json';
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta
           name="viewport"
@@ -28,29 +27,10 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/manifest.webmanifest"></link>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
-        {/* <ThemeProvider> */}
-        <MuiThemeProvider>{children}</MuiThemeProvider>
-        {/* </ThemeProvider> */}
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );

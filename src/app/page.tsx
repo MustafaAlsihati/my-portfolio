@@ -29,7 +29,7 @@ export default async function IndexPage() {
   );
 
   return (
-    <div className="flex-grow dark">
+    <div className="flex-grow bg-background dark:bg-backgroundDark">
       <AppBar />
       <div className="mx-auto container bg-background dark:bg-backgroundDark">
         <Landing />

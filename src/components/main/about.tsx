@@ -12,6 +12,7 @@ export const About = () => {
       className="container px-6 md:px-0 flex flex-col-reverse md:flex-row gap-24 items-center justify-center pb-[80px]"
       style={{ minHeight: `calc(75vh - 32px)` }}>
       <motion.div
+        className="flex-1"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -24,6 +25,7 @@ export const About = () => {
         </h4>
       </motion.div>
       <motion.div
+        className="rounded-full w-[350px] h-[350px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

@@ -3,12 +3,15 @@
 import { IconButton } from '@/components/ui/icon-button';
 import data from '@/constants/data.json';
 import { SunIcon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const { name } = data;
 
 export const AppBar = () => {
+  const { theme, setTheme } = useTheme();
+
   const toggleTheme = () => {
-    // setTheme(theme => (theme.palette.type === 'dark' ? lightTheme : darkTheme));
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (

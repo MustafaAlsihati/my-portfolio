@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Your default theme */
+  --background: #fafafa;
+}
+
+[class='dark'] {
+  --background: #212121;
+}

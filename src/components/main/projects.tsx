@@ -73,12 +73,12 @@ export const Projects = ({ projects }: Props) => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-row flex-wrap gap-2">
+                    <div className="flex flex-row flex-wrap gap-1">
                       {!!v.value.languages &&
-                        v.value.languages.map((lang, i) => (
+                        v.value.languages.map((lang: string, i: number) => (
                           <div
                             key={i}
-                            className="px-3 py-1 bg-zinc-400 dark:bg-zinc-600 rounded-2xl text-black dark:text-white">
+                            className="px-3 py-1 bg-green-900 rounded-2xl text-green-200 text-xs">
                             {lang}
                           </div>
                         ))}
