@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   description: 'Portfolio ' + name + ' skills, Projects, Experience, Resume',
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning className={roboto.className}>
       <head>
@@ -30,7 +30,6 @@ export default function RootLayout({
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta name="theme-color" content="black" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
         <ThemeProvider attribute="class">{children}</ThemeProvider>
