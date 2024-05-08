@@ -1,5 +1,6 @@
-import { ThemeProvider } from '@/app/theme-provider';
+import { ThemeProvider as MuiThemeProvider } from '@/app/theme-provider';
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import data from '../constants/data.json';
 import './globals.css';
 
@@ -47,7 +48,9 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest"></link>
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        {/* <ThemeProvider> */}
+        <MuiThemeProvider>{children}</MuiThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

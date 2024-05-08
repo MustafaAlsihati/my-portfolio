@@ -1,8 +1,9 @@
 'use client';
 
+import { Tooltip } from '@/components/ui/tool-tip';
 import data from '@/constants/data.json';
 import { iconify } from '@/ts/utils';
-import { Fade, Tooltip, Zoom } from '@material-ui/core';
+import { motion } from 'framer-motion';
 import { BanIcon } from 'lucide-react';
 import Image from 'next/image';
 import ReactTyped from 'react-typed';
@@ -41,23 +42,33 @@ export const Landing = () => {
       className="flex flex-row justify-center items-center grid-cols-1 md:grid-cols-2 gap-4 px-6 md:px-0 pb-[80px]"
       style={{ minHeight: `calc(100vh - 32px)` }}>
       <div>
-        <h1 className="text-text dark:text-textDark text-6xl md:text-8xl">
-          {landing.title}
-        </h1>
-        <h2 className="text-text dark:text-textDark text-2xl md:text-4xl mb-12 mt-8">
-          <ReactTyped
-            strings={landing.subtitles}
-            typeSpeed={40}
-            backSpeed={50}
-            loop
-          />
-        </h2>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 'all' }}>
+          <h1 className="text-text dark:text-textDark text-6xl md:text-8xl">
+            {landing.title}
+          </h1>
+          <h2 className="text-text dark:text-textDark text-2xl md:text-4xl mb-12 mt-8">
+            <ReactTyped
+              strings={landing.subtitles}
+              typeSpeed={40}
+              backSpeed={50}
+              loop
+            />
+          </h2>
+        </motion.div>
         <div className="container flex flex-row gap-4">
           {professionalDetails.map(({ alt, icon, link }: any, i) => {
             return (
               <a key={i} href={link} target="_blank" rel="noopener noreferrer">
-                <Zoom in={true} style={{ transitionDelay: `${100 * i}ms` }}>
-                  <Tooltip title={alt} placement="top">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}>
+                  <Tooltip text={alt}>
                     <div
                       className="rounded-lg"
                       style={{
@@ -69,25 +80,21 @@ export const Landing = () => {
                       {icon}
                     </div>
                   </Tooltip>
-                </Zoom>
+                </motion.div>
               </a>
             );
           })}
         </div>
       </div>
 
-      <div className="hidden md:flex">
-        <Fade in={true} style={{ transitionDelay: '100ms' }}>
-          <div>
-            <Image
-              src="/landing.svg"
-              alt="Landing"
-              width={900.94}
-              height={787}
-            />
-          </div>
-        </Fade>
-      </div>
+      <motion.div
+        className="hidden md:flex"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ amount: 'all' }}>
+        <Image src="/landing.svg" alt="Landing" width={900.94} height={787} />
+      </motion.div>
     </div>
   );
 };
