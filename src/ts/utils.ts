@@ -1,3 +1,6 @@
+import { ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
 export function iconify(input = '') {
   const replacers = [
     {
@@ -53,4 +56,8 @@ export function getHumanDiff(startDate: Date | string, endDate: Date | string) {
   }
 
   return str;
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }

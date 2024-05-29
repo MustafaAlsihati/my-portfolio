@@ -1,5 +1,6 @@
 'use client';
 
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 import { RepoForkedIcon, RepoIcon, StarIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -23,12 +24,16 @@ export const Projects = ({ projects }: Props) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ amount: 'all' }}>
-          <Image
-            alt="Projects"
-            src="/projects.svg"
-            width={1144}
-            height={617.32}
-          />
+          <CardContainer>
+            <CardItem>
+              <Image
+                alt="Projects"
+                src="/projects.svg"
+                width={1144}
+                height={617.32}
+              />
+            </CardItem>
+          </CardContainer>
         </motion.div>
       </div>
       <div className="w-12 h-12" />

@@ -1,5 +1,6 @@
 'use client';
 
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 import { Tooltip } from '@/components/ui/tool-tip';
 import data from '@/constants/data.json';
 import { iconify } from '@/ts/utils';
@@ -25,7 +26,11 @@ export const Skills = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ amount: 'all' }}>
-          <Image alt="Skills" src="/skill.svg" width={1139} height={655} />
+          <CardContainer>
+            <CardItem>
+              <Image alt="Skills" src="/skill.svg" width={1139} height={655} />
+            </CardItem>
+          </CardContainer>
         </motion.div>
       </div>
       <div className="container flex flex-col items-center md:items-end gap-8">

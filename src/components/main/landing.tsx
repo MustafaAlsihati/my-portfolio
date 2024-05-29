@@ -1,5 +1,6 @@
 'use client';
 
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 import { Tooltip } from '@/components/ui/tool-tip';
 import data from '@/constants/data.json';
 import { iconify } from '@/ts/utils';
@@ -93,7 +94,16 @@ export const Landing = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ amount: 'all' }}>
-        <Image src="/landing.svg" alt="Landing" width={900.94} height={787} />
+        <CardContainer>
+          <CardItem>
+            <Image
+              src="/landing.svg"
+              alt="Landing"
+              width={900.94}
+              height={787}
+            />
+          </CardItem>
+        </CardContainer>
       </motion.div>
     </div>
   );

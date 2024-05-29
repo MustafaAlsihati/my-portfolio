@@ -1,5 +1,6 @@
 'use client';
 
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 import data from '@/constants/data.json';
 import { getHumanDiff } from '@/ts/utils';
 import { motion } from 'framer-motion';
@@ -21,14 +22,16 @@ export const Experience = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ amount: 'all' }}>
-          <div className="max-w-md">
-            <Image
-              alt="Experience"
-              src="/experience.svg"
-              width={996.46}
-              height={828.18}
-            />
-          </div>
+          <CardContainer className="max-w-md">
+            <CardItem>
+              <Image
+                alt="Experience"
+                src="/experience.svg"
+                width={996.46}
+                height={828.18}
+              />
+            </CardItem>
+          </CardContainer>
         </motion.div>
       </div>
       <div className="w-12 h-12" />
